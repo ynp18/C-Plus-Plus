@@ -347,6 +347,7 @@ int main()
 	void* p1 = NULL;
 	int* p2 = (int*)p1;
 	int i = NULL;
-	int i = nullptr;
+	int* p2 = nullptr;
+	//int i = nullptr;
 	return 0;
 }
