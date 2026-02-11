@@ -257,20 +257,96 @@
 //	return 0;
 //}
 
-#include <iostream>
-using namespace std;
+//#include <iostream>
+//using namespace std;
 //引用
 //引⽤在定义时必须初始化
 //⼀个变量可以有多个引⽤
 //引⽤⼀旦引⽤⼀个实体，再不能引⽤其他实体
+//int main()
+//{
+//	int a = 10;
+//	int& b = a;
+//	int c = 20;
+//	b = c;
+//	cout << a << endl;
+//	cout << b << endl;
+//	cout << c << endl;
+//	return 0;
+//}
+
+//#include <iostream>
+//using namespace std;
+//
+//void func(const int& val)
+//{
+//
+//}
+//
+//int main()
+//{
+//	const int a = 10;
+//	int rd = a;
+//	//int& ra = a;
+//	const int& ra = a;
+//	//只有指针和引用的时候会涉及到权限放大的问题
+//	//引用的时候权限可以缩小，但不能放大
+//	int b = 40;
+//	const int& rb = b;
+//	b++;
+//
+//	//int& x=a+b; ，这句话不行，因为临时变量在C++中会认为是常量
+//
+//	const int& x = a + b;
+//	const int& rc = 30;
+//
+//	double d = 12.56;
+//	const int& i = d;
+//	
+//	func(d);
+//	func(a + d);
+//
+//	return 0;
+//}
+
+//#define ADD(a,b)    ((a)+(b))
+//
+//#include<iostream>
+//using namespace std;
+//
+//inline int ADD(int x, int y)
+//{
+//	return x + y;
+//}
+//
+//int main()
+//{
+//	int ret = ADD(1, 2);
+//	cout << ret * 5 << endl;
+//	return 0;
+//}
+
+#include <iostream>
+using namespace std;
+
+void f(int x)
+{
+	cout << "f(int x)" << endl;
+}
+
+void f(int* ptr)
+{
+	cout << "f(int* ptr)" << endl;
+}
+
 int main()
 {
-	int a = 10;
-	int& b = a;
-	int c = 20;
-	b = c;
-	cout << a << endl;
-	cout << b << endl;
-	cout << c << endl;
+	f(0);
+	f(NULL);
+	f(nullptr);
+	void* p1 = NULL;
+	int* p2 = (int*)p1;
+	int i = NULL;
+	int i = nullptr;
 	return 0;
 }
